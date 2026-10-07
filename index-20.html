@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071426">
+<title>MedProfessor AI</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="app">
+<header>
+  <div class="brand">
+    <div class="brandmark">✚</div>
+    <div><b>MedProfessor AI</b><small id="subtitle">Ваш интеллектуальный медицинский помощник</small></div>
+  </div>
+  <button id="profileBtn" class="ghost">👤 Профиль</button>
+</header>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow">AI MEDICAL ASSISTANT</span>
+    <h1>Разговор с <span>медицинским ИИ</span></h1>
+    <p>Опишите симптомы, задайте вопрос или загрузите медицинский документ. Система помогает структурировать информацию и определить, нужна ли срочная медицинская помощь.</p>
+  </div>
+  <div class="hero-orb">🩺</div>
+</section>
+
+<div class="layout">
+<section class="panel chat">
+  <div class="chat-head">
+    <div><b>Профессор AI</b><small id="status">Информационный режим</small></div>
+    <button class="ghost" id="newChat">＋ Новый чат</button>
+  </div>
+
+  <div id="messages" class="messages"></div>
+
+  <div class="composer">
+    <button id="mic" class="icon">🎤</button>
+    <textarea id="input" placeholder="Напишите, что вас беспокоит..."></textarea>
+    <button id="send" class="send">➤</button>
+  </div>
+</section>
+
+<aside>
+  <div class="panel tools">
+    <h3>Инструменты</h3>
+    <button class="tool" id="uploadBtn"><span>🧪</span><div><b>Загрузить анализ</b><small>PDF, фото, документ</small></div></button>
+    <input id="file" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.txt" hidden>
+    <button class="tool" id="reportBtn"><span>📋</span><div><b>Отчёт для врача</b><small>Собрать текущую консультацию</small></div></button>
+    <button class="tool" id="speakBtn"><span>🔊</span><div><b>Озвучить ответ</b><small>Голосовое чтение</small></div></button>
+  </div>
+
+  <div class="panel risk">
+    <div class="risk-top"><h3>Срочность</h3><b id="riskText">Низкая</b></div>
+    <div class="bar"><i id="riskBar"></i></div>
+    <small>Оценка предварительная и не является диагнозом.</small>
+  </div>
+
+  <div class="panel safety">
+    <b>⚠️ Важно</b>
+    <p>При затруднённом дыхании, потере сознания, сильной боли, сильном кровотечении или других опасных симптомах обращайтесь за экстренной помощью, не ожидая ответа ИИ.</p>
+  </div>
+</aside>
+</div>
+
+<div id="profileModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="x" id="closeProfile">×</button>
+    <h2>Профиль пациента</h2>
+    <label>Имя<input id="name"></label>
+    <label>Год рождения<input id="birth" type="number" min="1900" max="2026"></label>
+    <label>Язык
+      <select id="language">
+        <option value="ru">Русский</option>
+        <option value="tg">Тоҷикӣ</option>
+        <option value="en">English</option>
+        <option value="uz">O‘zbek</option>
+      </select>
+    </label>
+    <button class="primary" id="saveProfile">Сохранить</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+<footer>MedProfessor AI • Информационная система, не замена врачу</footer>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
